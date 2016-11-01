@@ -1,13 +1,71 @@
 <!DOCTYPE html>
-<html>
+
+{% block html_tag %}
+<html {% block html_class %}class="no-js" {% endblock %}lang="{{ app.request.locale }}">
+{% endblock html_tag %}
+
+{% block head %}
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="{{ _charset }}">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}BenGor{% endblock title %}</title>
+        <meta name="description" content="{% block description %}{% endblock description %}">
+        {% block favicon %}
+            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+            <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block head_style %}
+            <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:400,700" rel="stylesheet">
+            <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">
+        {% endblock head_style %}
+
+        {% block meta_fields %}{% endblock %}
+
+        {% block head_script %}
+            <script src="{{ asset('js/modernizr.js') }}"></script>
+        {% endblock head_script %}
+
+        {% block head_bottom %}
+        {% endblock head_bottom %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+{% endblock head %}
+
+{% block body_tag %}
+<body>
+{% endblock body_tag %}
+
+{% block body_start %}
+{% endblock body_start %}
+
+{% block body %}
+    {% block deprecationNotice %}
+
+    {% endblock %}
+
+    {% block header %}
+        {% include 'components/header.html.twig' %}
+    {% endblock header %}
+
+    <main class="content">
+        {% block content %}{% endblock content %}
+    </main>
+    {% block footer %}
+        {% include 'components/footer.html.twig' %}
+    {% endblock footer %}
+
+    {% block cookies %}
+        {% include 'components/cookies.html.twig' %}
+    {% endblock cookies %}
+
+    {% block body_end_before_js %}
+    {% endblock body_end_before_js %}
+
+    {% block foot_script %}
+        <script src="{{ asset('js/app.js') }}"></script>
+    {% endblock foot_script %}
+{% endblock body %}
+
+{% block body_end %}{% endblock body_end %}
+</body>
 </html>

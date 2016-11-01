@@ -1,0 +1,70 @@
+// This file is part of the Arizona Vintage project.
+//
+// Copyright (c) 2015-2016 LIN3S <info@lin3s.com>
+//
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code.
+//
+// @author Gorka Laucirica <gorka.lauzirika@gmail.com>
+
+@import '../base/grid';
+@import '../variables/grid';
+
+@include grid__row('.row', 'adaptive')
+
+.row__column {
+  @include grid__column(12);
+}
+
+.row--collapse {
+  padding-left: $column-gutter / 2;
+  padding-right: $column-gutter / 2;
+
+  > .row__column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.row--center {
+  justify-content: center;
+}
+
+$small-cols: 6, 8, 12;
+$medium-cols: 4, 6, 12;
+$large-cols: 2, 3, 4, 5, 6, 7, 8, 9, 12;
+$xlarge-cols: 3, 4, 5, 6, 7, 8, 9, 12;
+
+@each $col in $small-cols {
+  .row__column--small-#{$col} {
+    flex: 1 1 #{100% / $column-count * $col};
+    max-width: #{100% / $column-count * $col};
+  }
+}
+
+@media #{$medium-up} {
+  @each $col in $medium-cols {
+    .row__column--medium-#{$col} {
+      flex: 1 1 #{100% / $column-count * $col};
+      max-width: #{100% / $column-count * $col};
+    }
+  }
+}
+
+@media #{$large-up} {
+  @each $col in $large-cols {
+    .row__column--large-#{$col} {
+      flex: 1 1 #{100% / $column-count * $col};
+      max-width: #{100% / $column-count * $col};
+    }
+  }
+}
+
+@media #{$xlarge-up} {
+  @each $col in $xlarge-cols {
+    .row__column--xlarge-#{$col} {
+      flex: 1 1 #{100% / $column-count * $col};
+      max-width: #{100% / $column-count * $col};
+    }
+  }
+}

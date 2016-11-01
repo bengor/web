@@ -1,0 +1,77 @@
+// This file is part of the Arizona Vintage project.
+//
+// Copyright (c) 2015-2016 LIN3S <info@lin3s.com>
+//
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code.
+//
+// @author Jon Torrado <jtorrado@lin3s.com>
+// @author Gorka Laucirica <gorka.lauzirika@gmail.com>
+
+@import '../variables/colors';
+@import '../variables/typography';
+
+.button {
+  border: 2px solid;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-family-headers;
+  font-weight: $font-weight-bold;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 11px;
+  outline: 0;
+  padding: 12px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .2s;
+
+  &:hover {
+    transition: background-color .2s, border-color .2s;
+  }
+}
+
+.button--silver {
+  background-color: $color-silver;
+  border-color: $color-silver;
+  color: $color-white;
+
+  &:hover {
+    background: darken($color-silver, 10%);
+    border-color: darken($color-silver, 10%);
+  }
+}
+
+.button--black {
+  background-color: rgba($color-black, .2);
+  border-color: $color-white;
+  color: $color-white;
+
+  &:hover {
+    background-color: rgba($color-black, .8);
+    color: $color-white;
+  }
+}
+
+.button--white {
+  background-color: rgba($color-white, .8);
+  border-color: $color-black;
+  color: $color-black;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
+
+.button--disco {
+  background-color: $color-disco;
+  border-color: $color-disco;
+  color: $color-white;
+
+  &:hover {
+    background-color: lighten($color-disco, 10%);
+    border-color: lighten($color-disco, 10%);
+    color: $color-white;
+  }
+}
