@@ -11,18 +11,16 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig');
     }
 
     /**
-     * @Route("/{product}", name="product_cookies", requirements={"product": "(cookies|user|file)"}))
+     * @Route("/{product}", name="product", requirements={"product": "(cookies|user|file)"}))
      */
     public function productAction($product)
     {
-        // replace this example code with whatever you need
         return $this->render('default/'. $product . '.html.twig');
     }
 }

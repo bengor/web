@@ -3,5 +3,5 @@
 <div class="product">
     <h5 class="product__logo">{{ logo.logo(product) }}</h5>
     <p class="product__details">{{ details }}</p>
-    <a href="">View more</a>
+    <a href="{{ path('product', {product: product}) }}">View more</a>
 </div>
