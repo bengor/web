@@ -1,0 +1,19 @@
+@import '../variables/colors';
+@import '../variables/typography';
+
+.bengor-logo {
+  font-family: $font-family-headers;
+  font-weight: $font-weight-light;
+}
+
+.bengor-logo__product--cookies {
+  color: $color-product-cookies;
+}
+
+.bengor-logo__product--user {
+  color: $color-product-user;
+}
+
+.bengor-logo__product--file {
+  color: $color-product-file;
+}

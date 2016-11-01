@@ -1,0 +1,184 @@
+{% extends 'base.html.twig' %}
+
+{% import 'components/button.html.twig' as button %}
+{% import 'components/bengor_logo.html.twig' as logo %}
+
+{% block content %}
+    {% embed 'components/hero.html.twig' with {
+        subtitle: 'Cookie warning banner that request user consent, European law compilant. Zero dependencies, fully customizable'
+    } %}
+        {% block hero_title_content %}
+            {{ logo.logo('cookies') }}
+        {% endblock %}
+        {% block hero_ctas_content %}
+            {{ button.main_inverted('Github Repo', 'https://github.com/BenGorJS/Cookies') }}
+            {{ button.main('Show me the docs', '/') }}
+        {% endblock %}
+    {% endembed %}
+
+    {% include 'components/image_block.html.twig' with {
+        image: asset('images/cookies-browser.png')
+    } %}
+
+    {% embed 'components/section.html.twig' with {title: 'Why?'} %}
+        {% block section_content %}
+            <div class="row">
+                <div class="row__column row__column--large-4 row__column--medium-6">
+                    {% include 'components/feature.html.twig' with {
+                        icon: 'clock',
+                        title: 'Ready in 2 minutes',
+                        details: 'Two simple steps to make it work'
+                    } %}
+                </div>
+                <div class="row__column row__column--large-4 row__column--medium-6">
+                    {% include 'components/feature.html.twig' with {
+                        icon: 'law',
+                        title: 'EU Law compilant',
+                        details: 'No cookies added until user accepts the conditions or interacts with the page'
+                    } %}
+                </div>
+                <div class="row__column row__column--large-4 row__column--medium-6">
+                    {% include 'components/feature.html.twig' with {
+                        icon: 'extensible',
+                        title: 'Fully extensible',
+                        details: 'Create your own templates and cookie plugins'
+                    } %}
+                </div>
+                <div class="row__column row__column--large-4 row__column--medium-6">
+                    {% include 'components/feature.html.twig' with {
+                        icon: 'lightweight',
+                        title: 'Lightweight',
+                        details: 'The core only weights xKB minified and gzipped'
+                    } %}
+                </div>
+                <div class="row__column row__column--large-4 row__column--medium-6">
+                    {% include 'components/feature.html.twig' with {
+                        icon: 'plugins',
+                        title: 'Standalone',
+                        details: 'No external dependencies on runtime'
+                    } %}
+                </div>
+                <div class="row__column row__column--large-4 row__column--medium-6">
+                    {% include 'components/feature.html.twig' with {
+                        icon: 'es6',
+                        title: 'EcmaScript6 compatible',
+                        details: ''
+                    } %}
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed 'components/section.html.twig' with {title: 'Installation'} %}
+        {% block section_content %}
+            <div class="tabs">
+                <div class="tabs__header">
+                    <div class="tabs__item tabs__item--active">
+                        <div class="tech-logo tech-logo--npm">
+                            {% include 'svg/npm.svg.twig' %}
+                        </div>
+                    </div>
+                    <div class="tabs__item">
+                        <div class="tech-logo">
+                            {% include 'svg/bower.svg.twig' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs__contents">
+                    <div class="tabs__content tabs__content--active">
+                        {% embed 'components/code.html.twig' with {language: 'bash'} %}
+                            {% block code %}npm install --save bengor-cookies{% endblock %}
+                        {% endembed %}
+                    </div>
+                    <div class="tabs__content">
+                        {% embed 'components/code.html.twig' with {language: 'bash'} %}
+                            {% block code %}bower install --save bengor-cookies{% endblock %}
+                        {% endembed %}
+
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed 'components/section.html.twig' with {title: 'Usage'} %}
+        {% block section_content %}
+            <div class="tabs">
+                <div class="tabs__header">
+                    <div class="tabs__item tabs__item--active">
+                        <div class="tech-logo">
+                            {% include 'svg/es6.svg.twig' %}
+                        </div>
+                    </div>
+                    <div class="tabs__item">
+                        <div class="tech-logo">
+                            {% include 'svg/js.svg.twig' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs__contents">
+                    <div class="tabs__content tabs__content--active">
+                        {% embed 'components/code.html.twig' with {language: 'javascript'} %}
+{% block code %}
+import {BenGorCookies, BenGorCookiesPlugins, BenGorCookiesTemplates} from 'bengor-cookies';
+
+new BenGorCookies({
+    triggers: 'html',
+    maxPageYOffset: false,
+    plugins: [
+        new BenGorCookiesPlugins.GoogleTagManager('GTM-XXXXX')
+    ],
+    template: BenGorCookiesTemplates.Default({
+        link: '/cookies',
+        linkText: 'Cookies policy',
+        text: 'We use bengor-cookies to provide a better browsing experience and a more ' +
+        'personalized service. If you continue browsing, we consider accepting its use. ' +
+        'You can change the settings or get more information by consulting our',
+        acceptText: 'Accept'
+    })
+});
+{% endblock %}
+                        {% endembed %}
+                    </div>
+                    <div class="tabs__content">
+                        {% embed 'components/code.html.twig' with {language: 'html'} %}
+                            {% block code %}bower install --save bengor-cookies{% endblock %}
+                        {% endembed %}
+
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed 'components/section.html.twig' with {title: 'You found a bug?'} %}
+        {% block section_content %}
+            {% embed 'components/text_block.html.twig' %}
+                {% block text_block_content %}
+                    <p>In case you found a bug or have any comment related to this project, please submit an issue in our
+                        Github page.</p>
+                    {{ button.main_inverted('Submit an issue', 'https://github.com/BenGorJS/Cookies/issues') }}
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+
+    {% embed 'components/section.html.twig' with {title: 'Other libraries'} %}
+        {% block section_content %}
+            <div class="row">
+                <div class="row__column row__column--large-4">
+                    {% include 'components/product.html.twig' with {
+                        product: 'user',
+                        details: 'PHP standalone component that provides useful user management logic'
+                    }%}
+                </div>
+                <div class="row__column row__column--large-4">
+                    {% include 'components/product.html.twig' with {
+                        product: 'file',
+                        details: 'PHP standalone component that provides useful file management logic'
+                    }%}
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

@@ -1,0 +1,28 @@
+@import '../variables/colors';
+@import '../variables/typography';
+
+.section {
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+.section__title {
+  font-family: $font-family-headers;
+  font-size: 26px;
+  font-weight: $font-weight-bold;
+  position: relative;
+  text-align: center;
+
+  &:after {
+    background-color: $color-main;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 20px auto;
+    width: 50px;
+  }
+}
+
+.section__body {
+  margin-top: 30px;
+}

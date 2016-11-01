@@ -1,0 +1,43 @@
+@import '../variables/components';
+@import '../variables/typography';
+@import '../variables/grid';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-headers;
+  height: 500px;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  max-width: $size-hero-width;
+  padding-left: $row-padding;
+  padding-right: $row-padding;
+}
+
+.hero__title,
+.hero__subtitle {
+  font-weight: $font-weight-light;
+}
+
+.hero__title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  margin: 0;
+}
+
+.hero__ctas {
+  margin-top: 20px;
+
+  > .button {
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+

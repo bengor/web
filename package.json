@@ -4,9 +4,10 @@
   "dependencies": {
     "bengor-cookies": "^0.6.5",
     "fastclick": "^1.0.6",
-    "jquery": "^2.2.0",
+    "jquery": "^2.2.4",
     "lin3s-distribution": "^2.0.6",
     "lin3s-event-bus": "^0.2.4",
+    "prismjs": "^1.5.1",
     "semantic-ui-css": "^2.1.8",
     "svg4everybody": "^2.1.0"
   },

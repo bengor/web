@@ -1,12 +1,3 @@
-// This file is part of the Arizona Vintage project.
-//
-// Copyright (c) 2015-2016 LIN3S <info@lin3s.com>
-//
-// For the full copyright and license information, please view the LICENSE
-// file that was distributed with this source code.
-//
-// @author Gorka Laucirica <gorka.lauzirika@gmail.com>
-
 $color-white: #fff;
 $color-alabaster: #fafafa;
 $color-seashell: #f1f1f1;
@@ -21,3 +12,10 @@ $color-disco: #971539;
 $color-givry: #f8e9c2;
 $color-catskill: #e3ebf1;
 $color-blue-twitter: #55acee;
+
+$color-main: $color-disco !default;
+$color-secondary: $color-mine-shaft !default;
+
+$color-product-cookies: $color-disco;
+$color-product-user: $color-laurel;
+$color-product-file: $color-blue-twitter;

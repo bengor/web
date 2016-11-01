@@ -1,12 +1,3 @@
-// This file is part of the Arizona Vintage project.
-//
-// Copyright (c) 2015-2016 LIN3S <info@lin3s.com>
-//
-// For the full copyright and license information, please view the LICENSE
-// file that was distributed with this source code.
-//
-// @author Gorka Laucirica <gorka.lauzirika@gmail.com>
-
 @import '../variables/colors';
 @import '../variables/typography';
 
@@ -16,52 +7,19 @@
 
 html,
 body {
+  color: $color-secondary;
   font-family: $font-family-content;
   font-size: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
+  line-height: 136%;
   overflow-x: hidden;
   text-rendering: optimizelegibility;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: $font-family-headers;
-  font-weight: $font-weight-bold;
-  line-height: 1.3em;
-  margin: 16px 0;
-  text-transform: uppercase;
-}
-
-h1 {
-  font-size: 30px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 21px;
-}
-
-h4 {
-  font-size: 19px;
-}
-
-h5 {
-  font-size: 18px;
-}
-
 p {
-  //font-size: 13.5px;
   font-size: 16px;
-  //line-height: 1.6em;
-  line-height: 136%;
 
   &:not(:last-child) {
     margin-bottom: 1em;
@@ -69,8 +27,7 @@ p {
 }
 
 a {
-  color: $color-tundora;
-  //font-size: 13.5px;
+  color: $color-main;
   font-size: 16px;
   font-weight: $font-weight-normal;
   -webkit-tap-highlight-color: transparent;
@@ -100,27 +57,16 @@ blockquote {
 }
 
 li {
-  //font-size: 13.5px;
   margin-bottom: 7px;
   padding-left: 15px;
 
   &:before {
     content: "●";
-    color: $color-disco;
+    color: $color-main;
     margin-right: 10px;
   }
 }
 
 .body--no-scroll {
   overflow-y: hidden;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.slick-slide:active,
-.slick-slide:focus {
-  border: 0;
-  outline: 0;
 }

@@ -1,0 +1,15 @@
+<div class="hero">
+    {% block hero_title %}
+        <h1 class="hero__title">
+            {% block hero_title_content %}{{ title }}{% endblock %}
+        </h1>
+    {% endblock %}
+    {% block hero_subtitle %}
+        <h2 class="hero__subtitle">{{ subtitle }}</h2>
+    {% endblock %}
+    {% block hero_ctas %}
+        <div class="hero__ctas">
+            {% block hero_ctas_content %}{% endblock %}
+        </div>
+    {% endblock %}
+</div>

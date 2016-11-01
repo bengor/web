@@ -1,0 +1,14 @@
+<section class="section row">
+    <div class="row__column">
+        {% block section_title %}
+            <h3 class="section__title">
+                {% block section_title_content %}{{ title }}{% endblock %}
+            </h3>
+        {% endblock %}
+        {% block section_body %}
+           <div class="section__body">
+               {% block section_content %}{% endblock %}
+           </div>
+        {% endblock %}
+    </div>
+</section>

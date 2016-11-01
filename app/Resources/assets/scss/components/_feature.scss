@@ -1,0 +1,28 @@
+@import '../variables/colors';
+@import '../variables/typography';
+
+.feature {
+  margin-bottom: 30px;
+}
+
+.feature__icon {
+  fill: $color-main;
+  height: 50px;
+  margin: 0 auto 15px;
+  width: 50px;
+
+  > svg {
+    width: 50px;
+  }
+}
+
+.feature__title {
+  font-family: $font-family-headers;
+  font-size: 22px;
+  text-align: center;
+}
+
+.feature__details {
+  margin-top: 15px;
+  text-align: center;
+}

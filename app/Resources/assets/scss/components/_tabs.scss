@@ -1,0 +1,24 @@
+@import '../variables/colors';
+@import '../variables/grid';
+
+.tabs__header {
+  display: flex;
+  justify-content: center;
+}
+
+.tabs__item {
+  cursor: pointer;
+  padding: $column-gutter / 2;
+}
+
+.tabs__item--active {
+  border-bottom: 2px solid $color-main;
+}
+
+.tabs__content {
+  padding-top: 30px;
+}
+
+.tabs__content:not(.tabs__content--active) {
+  display: none;
+}

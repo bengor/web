@@ -1,0 +1,11 @@
+@import '../variables/grid';
+
+@import '../../../../../node_modules/prismjs/themes/prism';
+
+.code {
+  display: block;
+}
+
+pre[class*="language-"] {
+  padding: 0 #{$column-gutter / 2};
+}

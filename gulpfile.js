@@ -25,8 +25,8 @@ var paths = {
 };
 
 var watch = {
-  sass: './Resources/assets/scss/**/*.scss',
-  js: './Resources/assets/js/**/*.js',
+  sass: './app/Resources/assets/scss/**/*.scss',
+  js: './app/Resources/assets/js/**/*.js',
 };
 
 // Plumber error function
@@ -44,9 +44,6 @@ gulp.task('scss-lint', function () {
     .pipe(plumber({
       errorHandler: onError
     }))
-    .pipe(scsslint({
-      'config': './.scss_lint.yml'
-    }));
 });
 
 gulp.task('sass', ['scss-lint'], function () {
@@ -80,7 +77,7 @@ gulp.task('sass:prod', function () {
 });
 
 gulp.task('modernizr', function () {
-  return gulp.src([paths.js + '/*.js'])
+  return gulp.src(paths.entryJs)
     .pipe(plumber({
       errorHandler: onError
     }))

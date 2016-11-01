@@ -1,0 +1,15 @@
+{% macro main(text, link) %}
+    {% if link %}
+        <a href="{{ link }}" class="button button--main">{{ text }}</a>
+    {% else %}
+        <button class="button button--main">{{ text }}</button>
+    {% endif %}
+{% endmacro %}
+
+{% macro main_inverted(text, link) %}
+    {% if link %}
+        <a href="{{ link }}" class="button button--main-inverted">{{ text }}</a>
+    {% else %}
+        <button class="button button--main-inverted">{{ text }}</button>
+    {% endif %}
+{% endmacro %}
