@@ -1,14 +1,14 @@
-{% extends 'base_user.html.twig' %}
+{% extends 'base_file.html.twig' %}
 
 {% import 'components/button.html.twig' as button %}
 {% import 'components/bengor_logo.html.twig' as logo %}
 
 {% block content %}
     {% embed 'components/hero.html.twig' with {
-    subtitle: 'Lightweight user library developed using Domain-Driven Design'
+    subtitle: 'Lightweight file library developed using Domain-Driven Design'
     } %}
         {% block hero_title_content %}
-            {{ logo.logo('user') }}
+            {{ logo.logo('file') }}
         {% endblock %}
         {% block hero_ctas_content %}
             {{ button.main_inverted('Github Repo', 'https://github.com/BenGorUser') }}

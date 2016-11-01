@@ -47,7 +47,7 @@ gulp.task('scss-lint', function () {
 });
 
 gulp.task('sass', ['scss-lint'], function () {
-  return gulp.src(paths.sass + '/app.scss')
+  return gulp.src(paths.sass + '/*.scss')
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -60,7 +60,7 @@ gulp.task('sass', ['scss-lint'], function () {
 });
 
 gulp.task('sass:prod', function () {
-  return gulp.src(paths.sass + '/app.scss')
+  return gulp.src(paths.sass + '/*.scss')
     .pipe(plumber({
       errorHandler: onError
     }))

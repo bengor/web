@@ -17,7 +17,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block head_style %}
             <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:400,700" rel="stylesheet">
-            <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">
+            {% block style_template %}
+                <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">
+            {% endblock %}
         {% endblock head_style %}
 
         {% block meta_fields %}{% endblock %}
